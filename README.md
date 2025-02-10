@@ -2,6 +2,8 @@
 
 This project is a **financial dashboard application** built using Vue and Vuetify. It provides users with an interface to visualize financial data. The dashboard includes features like data tables, interactive charts, and filter functionality, enabling users to analyze and explore expenses dynamically.
 
+Link (Deployed to Vercel): https://financial-app-gules.vercel.app/
+
 ---
 
 ## Functionality

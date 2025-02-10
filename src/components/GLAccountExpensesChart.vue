@@ -3,7 +3,7 @@
     v-if="chartData"
     :data="chartData"
     :options="chartOptions"
-    :plugins="[centerTextPlugin, percentagePlugin]"
+    :plugins="[centerTextPlugin, ChartDataLabels]"
   />
 </template>
 
@@ -18,8 +18,9 @@ import {
     Legend,
     ArcElement,
 } from "chart.js";
-import type { ChartOptions, Chart, ChartDataset } from "chart.js";
+import type { ChartOptions, Chart } from "chart.js";
 import { Doughnut } from "vue-chartjs";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 // Register required Chart.js components
 ChartJS.register(DoughnutController, Title, Tooltip, Legend, ArcElement);
@@ -37,9 +38,9 @@ const groupedExpenses = computed(() => {
     }, {} as Record<string, number>);
 });
 
-const totalExpenses = computed(() => {
-    return Object.values(groupedExpenses.value).reduce((sum, amount) => sum + amount, 0);
-});
+const totalExpenses = computed(() =>
+    Object.values(groupedExpenses.value).reduce((sum, amount) => sum + amount, 0)
+);
 
 const chartData = computed(() => {
     const labels = Object.keys(groupedExpenses.value);
@@ -76,6 +77,7 @@ const chartOptions: ChartOptions<'doughnut'> = {
     plugins: {
         legend: {
             position: "top",
+            onClick: () => null,
         },
         tooltip: {
             callbacks: {
@@ -88,6 +90,20 @@ const chartOptions: ChartOptions<'doughnut'> = {
         },
         title: {
             display: false,
+        },
+        datalabels: {
+            formatter: (value, context) => {
+                const dataset = context.dataset.data as number[];
+                const total = dataset.reduce((acc, val) => acc + val, 0);
+                const percentage = ((value / total) * 100).toFixed(1);
+                return `${percentage}%`;
+            },
+            color: "#fff",
+            font: {
+                size: 12,
+            },
+            anchor: "center",
+            align: "center",
         },
     },
 };
@@ -109,36 +125,6 @@ const centerTextPlugin = {
 
         ctx.fillText(text, x, y);
         ctx.save();
-    },
-};
-
-// Plugin to show percentages inside each slice
-const percentagePlugin = {
-    id: "percentage",
-    afterDraw: (chart: Chart<'doughnut'>) => {
-        const ctx = chart.ctx;
-
-        const labels = chart.data.labels as string[] | undefined;
-        const datasets = chart.data.datasets as ChartDataset<'doughnut'>[];
-
-        if (!labels || !datasets[0]?.data) {
-            return;
-        }
-
-        labels.forEach((label, i) => {
-            const meta = chart.getDatasetMeta(0).data[i];
-            const total = (datasets[0].data as number[]).reduce((acc, value) => acc + value, 0);
-            const value = datasets[0].data[i] as number;
-            const percentage = ((value / total) * 100).toFixed(1) + "%";
-
-            const position = meta.tooltipPosition(true);
-
-            ctx.fillStyle = "#fff";
-            ctx.font = "12px Arial";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText(percentage, position.x, position.y);
-        });
     },
 };
 </script>

@@ -38,6 +38,9 @@ const chartData = computed(() => {
         bottom: 10,
       },
     },
+    legend: {
+      onClick: () => null,
+    },
     datasets: [
       {
         label: "Total Expenses (€)",
