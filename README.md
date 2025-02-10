@@ -22,7 +22,7 @@ This application includes the following features:
    - Updates both the table and charts instantly and allows user to select multiple values.
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Technology       | Purpose                                                   |
 |-------------------|-----------------------------------------------------------|
@@ -35,7 +35,7 @@ This application includes the following features:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 Here’s the directory structure of the project:
 
@@ -50,7 +50,7 @@ FINANCIAL-DASHBOARD
 
 ---
 
-## 💿 Install
+## Install
 
 Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
 
@@ -64,7 +64,7 @@ yarn install
 
 ---
 
-## 💡 Usage
+## Usage
 
 ### Starting the Development Server
 
