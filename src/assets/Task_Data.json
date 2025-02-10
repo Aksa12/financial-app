@@ -1,0 +1,100 @@
+[
+  {
+    "year": 2024,
+    "month": "January",
+    "vendor": "TechCorp",
+    "gl_account": "IT Services",
+    "amount": 5000
+  },
+  {
+    "year": 2024,
+    "month": "January",
+    "vendor": "OfficeMax",
+    "gl_account": "Office Supplies",
+    "amount": 1200
+  },
+  {
+    "year": 2024,
+    "month": "February",
+    "vendor": "CloudSystems",
+    "gl_account": "IT Services",
+    "amount": 7500
+  },
+  {
+    "year": 2024,
+    "month": "March",
+    "vendor": "TechCorp",
+    "gl_account": "IT Services",
+    "amount": 4200
+  },
+  {
+    "year": 2024,
+    "month": "March",
+    "vendor": "OfficeMax",
+    "gl_account": "Office Supplies",
+    "amount": 900
+  },
+  {
+    "year": 2024,
+    "month": "April",
+    "vendor": "GlobalLogistics",
+    "gl_account": "Transport",
+    "amount": 3000
+  },
+  {
+    "year": 2024,
+    "month": "May",
+    "vendor": "CloudSystems",
+    "gl_account": "IT Services",
+    "amount": 6800
+  },
+  {
+    "year": 2024,
+    "month": "June",
+    "vendor": "TechCorp",
+    "gl_account": "IT Services",
+    "amount": 5600
+  },
+  {
+    "year": 2024,
+    "month": "July",
+    "vendor": "OfficeMax",
+    "gl_account": "Office Supplies",
+    "amount": 1100
+  },
+  {
+    "year": 2024,
+    "month": "August",
+    "vendor": "GlobalLogistics",
+    "gl_account": "Transport",
+    "amount": 4500
+  },
+  {
+    "year": 2024,
+    "month": "September",
+    "vendor": "CloudSystems",
+    "gl_account": "IT Services",
+    "amount": 7200
+  },
+  {
+    "year": 2024,
+    "month": "October",
+    "vendor": "TechCorp",
+    "gl_account": "IT Services",
+    "amount": 6000
+  },
+  {
+    "year": 2024,
+    "month": "November",
+    "vendor": "GlobalLogistics",
+    "gl_account": "Transport",
+    "amount": 3300
+  },
+  {
+    "year": 2024,
+    "month": "December",
+    "vendor": "OfficeMax",
+    "gl_account": "Office Supplies",
+    "amount": 1500
+  }
+]
